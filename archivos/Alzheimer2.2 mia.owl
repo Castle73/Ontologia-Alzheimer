@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#"
+     xml:base="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11"
+     xmlns:alz="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Patrón"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Aburrido -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Aburrido">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Parado"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Sentado"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+        <rdfs:comment>parado, sentado, parado, sentado, parado, sentado -&gt; aburrido 
+sentado, parado, sentado, parado, sentado, parado -&gt; aburrido</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Patrón"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Deambulando -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Deambulando">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">4</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+        <rdfs:comment>caminar, caminar, caminar, caminar -&gt; deambular</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Deprimido -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Deprimido">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Sentado"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+        <rdfs:comment>sentado, sentado, sentado, sentado -&gt; deprimido</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Desorientado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Desorientado">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Parado"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+        <rdfs:comment>caminar, parado, caminar, parado, caminar, parado -&gt; desorientado 
+parado, caminar, parado, caminar, parado, caminar -&gt; desorientado</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Nervioso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Nervioso">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Sentado"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+        <rdfs:comment>caminar, sentado, caminar, sentado -&gt; nervioso 
+sentado, caminar, sentado, camina -&gt; nervioso</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Paciente -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Paciente"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Parado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Parado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Patrón"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Patrón -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Patrón"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Sentado -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Sentado">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Patrón"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C4">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C5 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C5">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#P1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#P1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Parado"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#S1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#S1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Sentado"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

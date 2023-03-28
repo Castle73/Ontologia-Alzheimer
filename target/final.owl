@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <owl:Ontology rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Paciente"/>
+  <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Deprimido">
+    <rdfs:comment>sentado, sentado, sentado, sentado -&gt; deprimido</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onClass>
+          <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Sentado"/>
+        </owl:onClass>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >1</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Aburrido">
+    <rdfs:comment>parado, sentado, parado, sentado, parado, sentado -&gt; aburrido 
+sentado, parado, sentado, parado, sentado, parado -&gt; aburrido</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Sentado"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Parado"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Nervioso">
+    <rdfs:comment>caminar, sentado, caminar, sentado -&gt; nervioso 
+sentado, caminar, sentado, camina -&gt; nervioso</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Sentado"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar"/>
+        </owl:someValuesFrom>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar">
+    <rdfs:subClassOf>
+      <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Patrón"/>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Deambulando">
+    <rdfs:comment>caminar, caminar, caminar, caminar -&gt; deambular</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:onClass rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar"/>
+        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        >4</owl:minQualifiedCardinality>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Parado">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Patrón"/>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Desorientado">
+    <rdfs:comment>caminar, parado, caminar, parado, caminar, parado -&gt; desorientado 
+parado, caminar, parado, caminar, parado, caminar -&gt; desorientado</rdfs:comment>
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Parado"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+    <owl:equivalentClass>
+      <owl:Restriction>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Caminar"/>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un"/>
+        </owl:onProperty>
+      </owl:Restriction>
+    </owl:equivalentClass>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Sentado">
+    <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Patrón"/>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#al_menos_un">
+    <rdfs:range rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Patrón"/>
+    <rdfs:domain rdf:resource="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#Estado"/>
+  </owl:ObjectProperty>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:51||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:52||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:56||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:50||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:57||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:58||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3FSJ||0:00:17||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:59||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5FSJB||0:00:07||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9SC||0:01:15||desorientado"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3FSJ||0:00:22||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:17||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1JT||0:00:36||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:15||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:01:20||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:16||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:11||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:09||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:13||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:14||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:10||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:25||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:06||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:55||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:07||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:44||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:08||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:43||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:54||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:53||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:12||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:41||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:42||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:31||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:40||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14FSJB||0:00:56||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12FSJB||0:00:20||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:10||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:11||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:09||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:39||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:56||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9VA||0:00:39||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJB||0:00:09||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:53||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:32||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:09||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:01:01||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:30||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:34||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:12||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:36||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:53||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:41||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:14||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:38||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:16||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12FSJB||0:00:52||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:12||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:18||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:01:07||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:12||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14SC||0:01:02||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:14||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:49||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:36||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:47||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9FSJB||0:00:28||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:38||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:05||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:32||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:14||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:00:30||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9FSJB||0:00:27||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:43||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:35||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:16||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:33||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:51||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:20||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:07||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:18||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:45||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:34||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:32||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:21||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:46||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:23||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJ||0:00:06||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:42||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJB||0:00:12||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:25||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:06||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJ||0:00:08||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:44||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:48||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:08||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:12||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:27||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:10||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:48||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:29||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:46||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:29||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10SC||0:00:59||desorientado"/>
+  <Sentado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#S1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </Sentado>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:19||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:21||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:00:35||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:46||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:49||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6VA||0:00:11||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:33||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJ||0:00:15||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5VA||0:00:44||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:14||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:24||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:17||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:37||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:33||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:23||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:36||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:20||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:42||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:36||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:18||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:43||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:18||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:17||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:33||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:46||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:47||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:37||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:36||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:19||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:47||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:47||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:52||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:23||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:38||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:37||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:53||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:57||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:28||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:27||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:56||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:38||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12FSJB||0:00:19||desorientado"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12FSJB||0:00:49||desorientado"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12FSJB||0:00:06||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:20||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14FSJB||0:00:15||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:00:12||desorientado"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9SC||0:01:11||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:53||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:32||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10SC||0:01:03||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9FSJB||0:00:41||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:40||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:32||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:50||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:33||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:00:17||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:32||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJ||0:00:12||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:50||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:31||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:11||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9FSJB||0:00:39||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:35||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:46||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:57||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJ||0:01:15||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:39||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:35||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:44||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:15||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:19||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:12||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:45||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:06||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:08||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:39||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:39||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:09||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:57||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:09||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:35||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:48||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:42||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:46||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5VA||0:00:45||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:17||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:50||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:06||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:22||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:45||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:43||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:36||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:49||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:47||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:13||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:34||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:28||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:55||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:31||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:30||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJ||0:00:09||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:47||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:00:33||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:30||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:51||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1JT||0:00:39||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:22||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:43||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:26||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6VA||0:00:34||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:20||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:01:00||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:01:02||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:08||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1JT||0:00:43||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:01:06||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:26||aburrido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:01:06||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:00:39||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:37||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJ||0:01:20||desorientado"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14SC||0:00:16||aburrido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:46||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:01:00||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJ||0:01:14||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:16||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6VA||0:00:35||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:11||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:13||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:44||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:01:05||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:13||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:21||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:40||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:01:04||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12FSJB||0:00:27||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:55||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJ||0:01:12||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:10||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:15||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:52||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:01:02||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:08||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:28||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:08||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:01:21||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:15||aburrido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1JT||0:00:45||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:45||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:58||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:48||desorientado"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:48||aburrido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:01:18||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14FSJB||0:00:12||aburrido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5FSJB||0:00:08||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:08||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:19||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:47||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6FSJB||0:00:06||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJ||0:01:21||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:01:08||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:16||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:44||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:55||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:46||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:56||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:14||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:33||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:07||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12FSJB||0:00:30||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:31||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:44||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:57||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:50||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:21||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJB||0:00:46||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:22||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:24||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJ||0:01:13||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:40||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:13||aburrido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6VA||0:00:36||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:29||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:51||aburrido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14SC||0:00:07||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJ||0:00:10||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJB||0:00:37||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:30||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:35||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJB||0:00:10||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:22||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:38||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:22||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:25||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:45||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:35||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:37||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:40||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:35||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:44||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:38||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:07||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:38||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:49||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6FSJB||0:00:12||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:00:31||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:27||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:59||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:12||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6FSJB||0:00:15||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:43||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:48||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:46||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:25||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:36||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:54||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:49||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:39||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14FSJB||0:01:28||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:49||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:19||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6FSJB||0:00:09||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:51||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJB||0:00:28||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:14||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:40||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:30||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:30||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3SC||0:00:21||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:33||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:00:36||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:50||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:54||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6VA||0:00:12||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:20||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:29||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJ||0:00:13||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:10||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:30||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:01:03||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:38||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:08||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:55||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:47||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:52||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:13||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:40||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:43||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:42||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:26||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:37||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3FSJ||0:00:21||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:37||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:48||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:06||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:33||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3FSJ||0:00:20||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:22||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:32||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:07||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:52||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12FSJB||0:00:32||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:41||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:19||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:41||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:47||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJ||0:01:11||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:24||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJ||0:00:07||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5VA||0:00:43||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:11||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:41||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:11||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:36||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:34||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:53||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:25||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:00:19||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:07||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:27||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:49||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3SC||0:00:22||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:53||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14SC||0:00:09||desorientado"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:00:37||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:51||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:41||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:34||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:49||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:44||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:24||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:20||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:17||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:01:00||deprimido"/>
+  <Caminar rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </Caminar>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJB||0:00:58||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:28||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:01:20||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:35||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:27||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:27||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:10||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:19||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#4VA||0:00:07||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9VA||0:00:38||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:05||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:34||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:33||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:00:57||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:32||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:09||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:19||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:18||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:01:05||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:10||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:20||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:01:05||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:09||aburrido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:49||aburrido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:29||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:01:19||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:45||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:55||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:17||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:20||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:16||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:06||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:58||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:57||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:01:01||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:01:02||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:10||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1JT||0:00:38||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:48||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:51||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:12||deprimido"/>
+  <Caminar rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C5">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </Caminar>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:44||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:46||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:42||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:30||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:38||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:18||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:40||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:52||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:50||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:51||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:35||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:09||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJB||0:00:14||nervioso"/>
+  <Caminar rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C4">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </Caminar>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:07||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:37||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:28||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:03||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:05||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:39||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:08||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:06||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:39||deprimido"/>
+  <Caminar rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C3">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </Caminar>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:43||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:37||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:58||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:33||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:54||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:56||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:35||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:31||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:45||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:12||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:33||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:51||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:31||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:10||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:48||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:48||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:23||nervioso"/>
+  <Caminar rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#C2">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </Caminar>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:45||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:50||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:21||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:26||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:00:18||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:28||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:27||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9SC||0:01:12||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:23||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:24||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:01:09||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:34||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9FSJB||0:00:26||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:36||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:49||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:39||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:30||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:20||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6FSJB||0:00:10||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:46||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:47||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6FSJB||0:00:14||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14FSJB||0:00:11||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6FSJB||0:00:13||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:46||aburrido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6FSJB||0:00:16||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:16||aburrido"/>
+  <Parado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#P1">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  </Parado>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:00||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6FSJB||0:00:07||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:01||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:01:02||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:27||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:00:32||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:59||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:56||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:52||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9FSJB||0:00:40||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:32||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:31||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:54||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:39||desorientado"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:52||aburrido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:12||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:07||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10SC||0:01:04||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:01:00||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:36||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:49||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:11||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14FSJB||0:01:32||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:25||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:19||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:45||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9SC||0:01:10||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:50||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:59||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:18||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:54||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:36||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:41||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:36||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:34||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:51||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:08||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:04||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:29||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:47||desorientado"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3FSJ||0:00:32||desorientado"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJB||0:00:40||desorientado"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3FSJ||0:00:16||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:24||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:38||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:17||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:44||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:21||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:59||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:58||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:34||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:13||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:43||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:29||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:01:08||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:11||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:40||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:32||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:41||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:55||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:20||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:41||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:21||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJB||0:00:11||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1JT||0:00:40||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:40||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:50||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1JT||0:00:41||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:01:03||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1JT||0:00:44||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3FSJ||0:00:34||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:09||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:01:01||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJB||0:00:43||desorientado"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1JT||0:00:37||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:36||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:29||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:06||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:15||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:14||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:47||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:12||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:12||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:38||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJB||0:00:08||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:11||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:48||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:42||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:01:03||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:41||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:14||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:54||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:01:01||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:53||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:09||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:39||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:51||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:01:01||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:35||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:06||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:37||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9FSJB||0:00:29||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:56||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:15||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:43||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:44||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:41||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:35||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:18||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:17||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:01:01||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:28||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:36||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:56||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6VA||0:00:10||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#5SC||0:00:08||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:49||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJB||0:00:05||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJ||0:01:16||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:40||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9VA||0:00:37||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:18||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:35||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:12||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:48||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:54||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:10||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:42||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:01:04||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:52||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:28||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:50||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:26||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10SC||0:01:02||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:52||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:23||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:40||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:18||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:40||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:42||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:20||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:59||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:29||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJ||0:01:17||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:34||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:26||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:50||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:15||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:34||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:53||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:21||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:44||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9FSJB||0:00:24||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:21||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJB||0:00:07||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:39||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:35||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:34||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:48||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:19||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:16||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:39||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:45||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6FSJB||0:00:11||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:13||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:48||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:58||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:17||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:48||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10FSJB||0:00:37||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:33||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:26||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:49||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJB||0:00:29||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:39||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:29||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:18||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:55||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:09||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:01:02||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:50||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:54||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#6FSJB||0:00:08||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:31||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14FSJB||0:00:10||aburrido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:22||aburrido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:23||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7 FSJB||0:00:58||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:31||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8FSJB||0:00:51||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3JT||0:00:25||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:34||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:34||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:01:04||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9SC||0:01:13||desorientado"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10SC||0:01:01||desorientado"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3FSJ||0:00:19||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2FSJ||0:00:14||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:31||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9FSJB||0:00:30||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:52||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:46||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2JT||0:00:38||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:15||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:59||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:37||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:43||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3VA||0:00:47||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:17||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:25||nervioso"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#14SC||0:00:18||aburrido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:16||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:15||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:38||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11FSJB||0:01:07||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:33||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#12SC||0:00:44||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1SC||0:00:31||nervioso"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#10SC||0:01:00||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:15||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9FSJB||0:00:23||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:45||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:00:49||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1VA||0:00:45||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1CR||0:00:26||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#8VA||0:01:08||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:32||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#11SC||0:00:57||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2SC||0:00:32||deprimido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#1FSJ||0:01:18||desorientado"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:45||deprimido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:06||deprimido"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:50||aburrido"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#9SC||0:01:14||desorientado"/>
+  <Desorientado rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#3FSJ||0:00:35||desorientado"/>
+  <Aburrido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13SC||0:00:14||aburrido"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2CR||0:00:30||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:47||nervioso"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:27||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#2VA ||0:00:28||deprimido"/>
+  <Nervioso rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#7SC||0:00:56||nervioso"/>
+  <Deprimido rdf:about="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11#13FSJB||0:00:20||deprimido"/>
+</rdf:RDF>

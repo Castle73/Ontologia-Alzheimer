@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11">
+    <Prefix name="alz" IRI="http://www.semanticweb.org/lenovo/ontologies/2021/6/untitled-ontology-11"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="#Aburrido"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Caminar"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deambulando"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Deprimido"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Desorientado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Estado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Nervioso"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Paciente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Parado"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Patrón"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sentado"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#al_menos_un"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#C1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#C2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#C3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#C4"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#C5"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#P1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#S1"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#Aburrido"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#al_menos_un"/>
+            <Class IRI="#Parado"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Aburrido"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#al_menos_un"/>
+            <Class IRI="#Sentado"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Deambulando"/>
+        <ObjectMinCardinality cardinality="4">
+            <ObjectProperty IRI="#al_menos_un"/>
+            <Class IRI="#Caminar"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Deprimido"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#al_menos_un"/>
+            <Class IRI="#Sentado"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Desorientado"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#al_menos_un"/>
+            <Class IRI="#Caminar"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Desorientado"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#al_menos_un"/>
+            <Class IRI="#Parado"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Nervioso"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#al_menos_un"/>
+            <Class IRI="#Caminar"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Nervioso"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#al_menos_un"/>
+            <Class IRI="#Sentado"/>
+        </ObjectSomeValuesFrom>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="#Aburrido"/>
+        <Class IRI="#Estado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Caminar"/>
+        <Class IRI="#Patrón"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Deambulando"/>
+        <Class IRI="#Estado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Deprimido"/>
+        <Class IRI="#Estado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Desorientado"/>
+        <Class IRI="#Estado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Nervioso"/>
+        <Class IRI="#Estado"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Parado"/>
+        <Class IRI="#Patrón"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sentado"/>
+        <Class IRI="#Patrón"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class IRI="#Caminar"/>
+        <NamedIndividual IRI="#C1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Caminar"/>
+        <NamedIndividual IRI="#C2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Caminar"/>
+        <NamedIndividual IRI="#C3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Caminar"/>
+        <NamedIndividual IRI="#C4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Caminar"/>
+        <NamedIndividual IRI="#C5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Parado"/>
+        <NamedIndividual IRI="#P1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Sentado"/>
+        <NamedIndividual IRI="#S1"/>
+    </ClassAssertion>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#al_menos_un"/>
+        <Class IRI="#Estado"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#al_menos_un"/>
+        <Class IRI="#Patrón"/>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Aburrido</IRI>
+        <Literal>parado, sentado, parado, sentado, parado, sentado -&gt; aburrido 
+sentado, parado, sentado, parado, sentado, parado -&gt; aburrido</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Deambulando</IRI>
+        <Literal>caminar, caminar, caminar, caminar -&gt; deambular</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Deprimido</IRI>
+        <Literal>sentado, sentado, sentado, sentado -&gt; deprimido</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Desorientado</IRI>
+        <Literal>caminar, parado, caminar, parado, caminar, parado -&gt; desorientado 
+parado, caminar, parado, caminar, parado, caminar -&gt; desorientado</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Nervioso</IRI>
+        <Literal>caminar, sentado, caminar, sentado -&gt; nervioso 
+sentado, caminar, sentado, camina -&gt; nervioso</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
